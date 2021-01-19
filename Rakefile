@@ -13,5 +13,5 @@ Hoe.spec('patir') do |prj|
   prj.urls = { 'home' => 'http://github.com/damphyr/patir' }
   prj.description = prj.paragraphs_of('README.md', 1..4).join("\n\n")
   prj.local_rdoc_dir = 'doc/rdoc'
-  prj.extra_deps << ['systemu', '~>2.6']
+  prj.extra_deps << ['systemu', '~>2.6.0']
 end
