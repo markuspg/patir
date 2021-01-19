@@ -1,20 +1,24 @@
-patir http://patir.rubyforge.org
+= patir
+
+home  :: http://patir.rubyforge.org
+
 == DESCRIPTION:
-  
+
 patir provides code to enable project automation tasks:
 
-* A logging format for ruby's built-in Logger
-* A command abstraction with a platform independent implementation for running shell commands and ruby code
-* Command sequences using the same command abstraction as single commands.
-* Configuration format for configuration files written in ruby.
+* a logging format for the built-in logger of Ruby
+* a command abstraction with a platform independent implementation for running
+    shell commands and ruby code
+* command sequences using the same command abstraction as single commands
+* a configuration format for configuration files written in Ruby
 
 == INSTALL:
 
- gem install patir
+    sudo gem install patir
 
 == LICENSE:
 
-The MIT License)
+The MIT License
 
 Copyright (c) 2007-2012 Vassilis Rizopoulos
 
