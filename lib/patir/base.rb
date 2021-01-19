@@ -2,13 +2,6 @@
 require 'logger'
 #This is the base module of the Patir system. It contains some usefull helper methods used by all child projects.
 module Patir
-  #The Patir version used
-  module Version
-    MAJOR=0
-    MINOR=9
-    TINY=0
-    STRING=[ MAJOR, MINOR, TINY ].join( "." )  	
-  end
   #Error thrown usually in initialize methods when missing required parameters
   #from the initialization hash.
   class ParameterException<RuntimeError
@@ -50,5 +43,22 @@ module Patir
     logger.formatter=PatirLoggerFormatter.new
     #logger.datetime_format="%Y%m%d %H:%M:%S"
     return logger
+  end
+
+  ##
+  # Version information of Patir
+  module Version
+    ##
+    # The major version of Patir
+    MAJOR = 0
+    ##
+    # The minor version of Patir
+    MINOR = 9
+    ##
+    # The tiny version of Patir
+    TINY = 0
+    ##
+    # The full version of Patir as a String
+    STRING = [MAJOR, MINOR, TINY].join('.')
   end
 end
