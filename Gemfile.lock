@@ -36,7 +36,7 @@ DEPENDENCIES
   minitest (~> 5.14.0)
   rdoc (~> 6.3.0)
   rubocop (~> 1.8.0)
-  systemu (~> 2.6)
+  systemu (~> 2.6.0)
 
 BUNDLED WITH
    2.2.5

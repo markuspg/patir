@@ -1,5 +1,6 @@
 source "https://rubygems.org"
-gem 'systemu',"~>2.6"
+
+gem 'systemu', '~>2.6.0'
 
 group :development do
   gem "hoe","~>3.16.0",:require => false
