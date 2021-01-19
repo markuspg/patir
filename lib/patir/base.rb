@@ -7,18 +7,28 @@ module Patir
   # initialization misses the required +cmd+ key
   class ParameterException < RuntimeError
   end
-  
-  class PatirLoggerFormatter<Logger::Formatter
-    Format="[%s] %5s: %s\n"
+
+  ##
+  # Extend the default log message formatter to define an own format
+  class PatirLoggerFormatter < Logger::Formatter
+    ##
+    # The format of the created log messages
+    FORMAT = "[%s] %5s: %s\n".freeze
+
+    ##
+    # Create a new instance defining the internally held log format
     def initialize
-      @datetime_format="%Y%m%d %H:%M:%S"
+      super
+      @datetime_format = '%Y%m%d %H:%M:%S'
     end
-    
-    def call severity, time, progname, msg
-      Format % [format_datetime(time), severity,
-        msg2str(msg)]
+
+    ##
+    # Create a formatted log message from the passed data
+    def call(severity, time, _progname, msg)
+      format(FORMAT, format_datetime(time), severity, msg2str(msg))
     end
   end
+
   #Just making Logger usage easier
   #
   #This is for use on top level scripts.
