@@ -2,9 +2,10 @@
 require 'logger'
 #This is the base module of the Patir system. It contains some usefull helper methods used by all child projects.
 module Patir
-  #Error thrown usually in initialize methods when missing required parameters
-  #from the initialization hash.
-  class ParameterException<RuntimeError
+  ##
+  # Exception which is thrown by ShellCommand if the Hash used for
+  # initialization misses the required +cmd+ key
+  class ParameterException < RuntimeError
   end
   
   class PatirLoggerFormatter<Logger::Formatter
