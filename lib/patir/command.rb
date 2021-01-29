@@ -557,7 +557,6 @@ module Patir
     end
     #Runs the associated block
     def run context=nil
-      @run=true
       @context=context
       @error=""
       @output=""
