@@ -5,10 +5,6 @@
 
 require 'logger'
 
-##
-# This module contains the entire functionality of Patir.
-#
-# Some useful helpers are included as methods too.
 module Patir
   ##
   # Exception which is thrown by ShellCommand if the Hash used for
@@ -67,22 +63,5 @@ module Patir
     logger.level = Logger::DEBUG if mode == :debug || $DEBUG
     logger.formatter = PatirLoggerFormatter.new
     logger
-  end
-
-  ##
-  # Version information of Patir
-  module Version
-    ##
-    # The major version of Patir
-    MAJOR = 0
-    ##
-    # The minor version of Patir
-    MINOR = 9
-    ##
-    # The tiny version of Patir
-    TINY = 0
-    ##
-    # The full version of Patir as a String
-    STRING = [MAJOR, MINOR, TINY].join('.')
   end
 end

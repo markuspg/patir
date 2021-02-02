@@ -1,29 +1,26 @@
-[![Build Status](https://secure.travis-ci.org/damphyr/patir.png)](http://travis-ci.org/damphyr/patir)
+# Patir
 
 [patir](http://patir.rubyforge.org) provides code to enable project automation tasks:
 
- * A logging format for ruby's built-in Logger
- * A command abstraction with a platform independent implementation for running shell commands and ruby code
- * Command sequences using the same command abstraction as single commands.
- * Configuration format for configuration files written in ruby.
-
-## Why?
-We've been using the same things again and again and can't be bothered to code it anew every time.
-
-The command abstraction has been used the most, the Logger defaults and formatting the least.
+ * a logging format for the build-in logger of Ruby
+ * a command abstraction with a platform independent implementation for running
+   shell commands and Ruby code
+ * command sequences using the same command abstraction as single commands
+ * a configuration format for configuration file written in Ruby
 
 ## Dependencies
+
 The platform independence for shell commands is achieved with the help of the [systemu](https://github.com/ahoward/systemu) gem.
 
 Everything else is pure Ruby.
 
 ## Install
 
- gem install patir
+    sudo gem install patir
 
 ## License
 
-(The MIT License)
+The MIT License
 
 Copyright (c) 2007-2012 Vassilis Rizopoulos
 Copyright (c) 2021 Markus Prasser

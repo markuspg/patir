@@ -111,7 +111,7 @@ module Patir::Test
       end
       assert_equal("Syntax error in the configuration file \"samples/syntax.cfg\"" \
                    ":\n#{File.expand_path('../../lib/patir', __FILE__)}" \
-                   "/configuration.rb:137: syntax error," \
+                   "/configuration.rb:138: syntax error," \
                    " unexpected end-of-input, expecting '}'",
                    exc.message)
     end
