@@ -1,6 +1,8 @@
+# Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
+# Copyright (c) 2021 Markus Prasser. All rights reserved.
+
 # frozen_string_literal: true
 
-#  Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
 require 'logger'
 
 ##
@@ -40,11 +42,13 @@ module Patir
   #
   # This creates a default logger fit for the usage with and around Patir.
   #
-  # +mode+ can be
+  # If no +filename+ is given output will be written to $stdout.
+  #
+  # +mode+ can be any value from Logger::Severity or
   # * +:mute+ to set the level to +FATAL+
   # * +:silent+ to set the level to +WARN+
-  # * +:debug+ to set the level to +DEBUG+. +debug+ is set also if $DEBUG is
-  #   +true+
+  # * +:debug+ to set the level to +DEBUG+. +DEBUG+ is set as level also if
+  #   $DEBUG is +true+
   #
   # The default log level is +INFO+.
   def self.setup_logger(filename = nil, mode = nil)
@@ -54,7 +58,10 @@ module Patir
                Logger.new($stdout)
              end
     logger.level = Logger::INFO
-    logger.level = mode if [Logger::INFO, Logger::FATAL, Logger::WARN, Logger::DEBUG].member?(mode)
+    if [Logger::DEBUG, Logger::ERROR, Logger::FATAL, \
+        Logger::INFO, Logger::UNKNOWN, Logger::WARN].member?(mode)
+      logger.level = mode
+    end
     logger.level = Logger::FATAL if mode == :mute
     logger.level = Logger::WARN if mode == :silent
     logger.level = Logger::DEBUG if mode == :debug || $DEBUG
