@@ -13,7 +13,7 @@ module Zatir
     MAJOR = 0
     ##
     # The minor version of Zatir
-    MINOR = 9
+    MINOR = 99
     ##
     # The patch version of Zatir
     PATCH = 0

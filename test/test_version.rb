@@ -15,9 +15,9 @@ module Zatir
       # Verify that the version numbers are set correctly
       def test_version_numbers
         assert_equal(0, Zatir::Version::MAJOR)
-        assert_equal(9, Zatir::Version::MINOR)
+        assert_equal(99, Zatir::Version::MINOR)
         assert_equal(0, Zatir::Version::PATCH)
-        assert_equal('0.9.0', Zatir::Version::STRING)
+        assert_equal('0.99.0', Zatir::Version::STRING)
       end
     end
   end
