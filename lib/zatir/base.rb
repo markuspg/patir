@@ -2,11 +2,15 @@
 require 'logger'
 
 module Zatir
-  #Error thrown usually in initialize methods when missing required parameters
-  #from the initialization hash.
-  class ParameterException<RuntimeError
+  ##
+  # Error intended to be thrown by initialize methods when a required parameter
+  # is missing from the initialization hash
+  #
+  # Currently this is only being used by ShellCommand if the hash lacks a +:cmd+
+  # key.
+  class ParameterException < RuntimeError
   end
-  
+ 
   class ZatirLoggerFormatter<Logger::Formatter
     Format="[%s] %5s: %s\n"
     def initialize
