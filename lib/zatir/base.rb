@@ -10,18 +10,38 @@ module Zatir
   # key.
   class ParameterException < RuntimeError
   end
- 
-  class ZatirLoggerFormatter<Logger::Formatter
-    Format="[%s] %5s: %s\n"
+
+  ##
+  # Log formatter class with a different format than Ruby's default
+  # Logger::Formatter class
+  class LoggerFormatter < Logger::Formatter
+    ##
+    # The format string of LoggerFormatter, e.g.
+    #
+    #    $ Zatir::LoggerFormatter.new
+    #    $  test_obj.call(Logger::DEBUG, Time.now, 'test_prog', 'Bla bla')
+    #    => [20210210 00:50:28]     0: Bla bla\n
+    FORMAT = "[%s] %5s: %s\n".freeze
+
+    ##
+    # Initialize a new LoggerFormatter instance
     def initialize
-      @datetime_format="%Y%m%d %H:%M:%S"
+      super
+      @datetime_format = '%Y%m%d %H:%M:%S'
     end
-    
-    def call severity, time, progname, msg
-      Format % [format_datetime(time), severity,
-        msg2str(msg)]
+
+    ##
+    # Build a new log message according to the modified format
+    #
+    # * +severity+ - a severity value (e.g. from Logger::Severity)
+    # * +time+ - a timestamp which shall be part of the log message
+    # * +program+ - unused
+    # * +msg+ - the message which shall be formatted
+    def call(severity, time, _progname, msg)
+      format(FORMAT, format_datetime(time), severity, msg2str(msg))
     end
   end
+
   #Just making Logger usage easier
   #
   #This is for use on top level scripts.
@@ -44,7 +64,7 @@ module Zatir
     logger.level=Logger::FATAL if mode==:mute
     logger.level=Logger::WARN if mode==:silent
     logger.level=Logger::DEBUG if mode==:debug || $DEBUG
-    logger.formatter=ZatirLoggerFormatter.new
+    logger.formatter=LoggerFormatter.new
     #logger.datetime_format="%Y%m%d %H:%M:%S"
     return logger
   end
