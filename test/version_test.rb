@@ -2,9 +2,9 @@
 
 # Copyright (c) 2021 Markus Prasser. All rights reserved.
 
-require 'minitest/autorun'
+require 'test_helper'
 
-require_relative '../lib/zatir/version'
+require 'zatir/version'
 
 module Zatir
   ##

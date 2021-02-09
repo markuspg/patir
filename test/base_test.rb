@@ -1,5 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__),"..","lib")
-require "minitest/autorun"
+require 'test_helper'
+
 require 'zatir/base.rb'
 
 class TestBase<Minitest::Test

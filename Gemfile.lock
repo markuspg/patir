@@ -1,15 +1,18 @@
+PATH
+  remote: .
+  specs:
+    Zatir (0.99.0)
+      systemu (~> 2.6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    hoe (3.22.3)
-      rake (>= 0.8, < 15.0)
     minitest (5.14.3)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
     rainbow (3.0.0)
-    rake (13.0.3)
     rdoc (6.3.0)
     regexp_parser (2.0.3)
     rexml (3.2.4)
@@ -32,11 +35,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  hoe (~> 3.22.0)
+  Zatir!
   minitest (~> 5.14.0)
   rdoc (~> 6.3.0)
   rubocop (~> 1.9.0)
-  systemu (~> 2.6.0)
 
 BUNDLED WITH
    2.2.8
