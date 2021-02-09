@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Markus Prasser. All rights reserved.
+
 # frozen_string_literal: true
 
 ##
