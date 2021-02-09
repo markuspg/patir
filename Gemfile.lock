@@ -3,7 +3,7 @@ GEM
   specs:
     hoe (3.22.3)
       rake (>= 0.8, < 15.0)
-    minitest (5.10.3)
+    minitest (5.14.3)
     rake (13.0.3)
     rdoc (6.3.0)
     systemu (2.6.5)
@@ -13,7 +13,7 @@ PLATFORMS
 
 DEPENDENCIES
   hoe (~> 3.22.0)
-  minitest (~> 5.10.1)
+  minitest (~> 5.14.0)
   rdoc (~> 6.3.0)
   systemu (~> 2.6.0)
 
