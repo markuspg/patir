@@ -1,6 +1,6 @@
 #  Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
 require 'logger'
-#This is the base module of the Zatir system. It contains some usefull helper methods used by all child projects.
+
 module Zatir
   #Error thrown usually in initialize methods when missing required parameters
   #from the initialization hash.
