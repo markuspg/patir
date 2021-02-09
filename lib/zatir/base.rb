@@ -1,8 +1,8 @@
 #  Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
 require 'logger'
-#This is the base module of the Patir system. It contains some usefull helper methods used by all child projects.
-module Patir
-  #The Patir version used
+#This is the base module of the Zatir system. It contains some usefull helper methods used by all child projects.
+module Zatir
+  #The Zatir version used
   module Version
     MAJOR=0
     MINOR=9
@@ -14,7 +14,7 @@ module Patir
   class ParameterException<RuntimeError
   end
   
-  class PatirLoggerFormatter<Logger::Formatter
+  class ZatirLoggerFormatter<Logger::Formatter
     Format="[%s] %5s: %s\n"
     def initialize
       @datetime_format="%Y%m%d %H:%M:%S"
@@ -47,7 +47,7 @@ module Patir
     logger.level=Logger::FATAL if mode==:mute
     logger.level=Logger::WARN if mode==:silent
     logger.level=Logger::DEBUG if mode==:debug || $DEBUG
-    logger.formatter=PatirLoggerFormatter.new
+    logger.formatter=ZatirLoggerFormatter.new
     #logger.datetime_format="%Y%m%d %H:%M:%S"
     return logger
   end

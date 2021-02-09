@@ -1,7 +1,7 @@
-patir http://patir.rubyforge.org
+zatir https://github.com/markuspg/zatir
 == DESCRIPTION:
   
-patir provides code to enable project automation tasks:
+zatir provides code to enable project automation tasks:
 
 * A logging format for ruby's built-in Logger
 * A command abstraction with a platform independent implementation for running shell commands and ruby code
@@ -10,7 +10,7 @@ patir provides code to enable project automation tasks:
 
 == INSTALL:
 
- gem install patir
+ gem install zatir
 
 == LICENSE:
 

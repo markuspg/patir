@@ -1,12 +1,12 @@
 #  Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
 
-require 'patir/base'
-module Patir
+require 'zatir/base'
+module Zatir
   #This exception is thrown when encountering a configuration error
   class ConfigurationException<RuntimeError
   end
   
-  #Configurator is the base class for all the Patir configuration classes.
+  #Configurator is the base class for all the Zatir configuration classes.
   # 
   #The idea behind the configurator is that the developer creates a module that contains as methods
   #all the configuration directives.
@@ -20,7 +20,7 @@ module Patir
   #==Example
   # module SimpleConfiguration
   #   def name= tool_name
-  #     raise Patir::ConfigurationException,"Inappropriate language not allowed" if tool_name=="@#!&@&$}"
+  #     raise Zatir::ConfigurationException,"Inappropriate language not allowed" if tool_name=="@#!&@&$}"
   #     @name=tool_name
   #   end
   # end
@@ -40,7 +40,7 @@ module Patir
     attr_reader :logger,:config_file,:wd
     def initialize config_file,logger=nil
       @logger=logger
-      @logger||=Patir.setup_logger
+      @logger||=Zatir.setup_logger
       @config_file=config_file
       load_configuration(@config_file)
     end

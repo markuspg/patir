@@ -1,6 +1,6 @@
-[![Build Status](https://secure.travis-ci.org/damphyr/patir.png)](http://travis-ci.org/damphyr/patir)
+[![Build Status](https://secure.travis-ci.org/damphyr/zatir.png)](http://travis-ci.org/damphyr/zatir)
 
-[patir](http://patir.rubyforge.org) provides code to enable project automation tasks:
+[zatir](http://zatir.rubyforge.org) provides code to enable project automation tasks:
 
  * A logging format for ruby's built-in Logger
  * A command abstraction with a platform independent implementation for running shell commands and ruby code
@@ -19,7 +19,7 @@ Everything else is pure Ruby.
 
 ## Install
 
- gem install patir
+ gem install zatir
 
 ## License
 

@@ -1,13 +1,13 @@
 $:.unshift File.join(File.dirname(__FILE__),"..","lib")
 require "minitest/autorun"
-require 'patir/command.rb'
+require 'zatir/command.rb'
 
 class MockCommandObject
-  include Patir::Command
+  include Zatir::Command
 end
 
 class MockCommandWarning
-  include Patir::Command
+  include Zatir::Command
   def run context=nil
     @status=:warning
     return :warning
@@ -15,7 +15,7 @@ class MockCommandWarning
 end
 
 class MockCommandError
-  include Patir::Command
+  include Zatir::Command
   def run context=nil
     @status=:error
     return :error
@@ -41,7 +41,7 @@ class TestCommand<Minitest::Test
 end
 
 class TestShellCommand<Minitest::Test
-  include Patir
+  include Zatir
   def teardown
     Dir.delete("missing/") if File.exist?("missing/")
   end
@@ -133,7 +133,7 @@ class TestShellCommand<Minitest::Test
 end
 
 class TestCommandSequence<Minitest::Test
-  include Patir
+  include Zatir
   def setup
     @echo=ShellCommand.new(:cmd=>"echo hello")
     @void=MockCommandObject.new
@@ -231,7 +231,7 @@ class TestCommandSequence<Minitest::Test
 end
 
 class TestRubyCommand<Minitest::Test
-  include Patir
+  include Zatir
   def test_normal_ruby
     cmd=RubyCommand.new("test"){sleep 1}
     assert(cmd.run)
@@ -259,7 +259,7 @@ end
 
 class TestCommandSequenceStatus<Minitest::Test
   def test_new
-    st=Patir::CommandSequenceStatus.new("sequence")
+    st=Zatir::CommandSequenceStatus.new("sequence")
     assert(!st.running?)
     assert(!st.success?)
     assert_equal(:not_executed, st.status)
@@ -267,7 +267,7 @@ class TestCommandSequenceStatus<Minitest::Test
   end
   
   def test_step_equal
-    st=Patir::CommandSequenceStatus.new("sequence")
+    st=Zatir::CommandSequenceStatus.new("sequence")
     step1=MockCommandObject.new
     step2=MockCommandWarning.new
     step3=MockCommandError.new
@@ -294,7 +294,7 @@ class TestCommandSequenceStatus<Minitest::Test
   end
   
   def test_completed?
-    st=Patir::CommandSequenceStatus.new("sequence")
+    st=Zatir::CommandSequenceStatus.new("sequence")
     step1=MockCommandObject.new
     step1.number=1
     step2=MockCommandWarning.new
