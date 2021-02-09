@@ -2,13 +2,6 @@
 require 'logger'
 #This is the base module of the Zatir system. It contains some usefull helper methods used by all child projects.
 module Zatir
-  #The Zatir version used
-  module Version
-    MAJOR=0
-    MINOR=9
-    TINY=0
-    STRING=[ MAJOR, MINOR, TINY ].join( "." )  	
-  end
   #Error thrown usually in initialize methods when missing required parameters
   #from the initialization hash.
   class ParameterException<RuntimeError

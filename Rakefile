@@ -1,7 +1,7 @@
 # -*- ruby -*-
-$:.unshift File.join(File.dirname(__FILE__),"lib")
 require 'hoe'
-require 'zatir/base'
+
+require_relative 'lib/zatir/version'
 
 Hoe.spec('Zatir') do |prj|
   developer("Vassilis Rizopoulos", "vassilisrizopoulos@gmail.com")
