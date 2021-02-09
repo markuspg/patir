@@ -1,7 +1,7 @@
-zatir https://github.com/markuspg/zatir
+Zatir https://github.com/markuspg/zatir
 == DESCRIPTION:
   
-zatir provides code to enable project automation tasks:
+Zatir provides code to enable project automation tasks:
 
 * A logging format for ruby's built-in Logger
 * A command abstraction with a platform independent implementation for running shell commands and ruby code
